@@ -54,15 +54,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
+    public void onSaveInstanceState( Bundle outState) {
+        super.onSaveInstanceState(outState);
         Log.i(TAG,"OnSaveInstanceState");
 
     }
 
     @Override
-    public void onRestoreInstanceState(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onRestoreInstanceState(savedInstanceState, persistentState);
+    public void onRestoreInstanceState( Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
         Log.i(TAG,"OnRestoreInstanceState");
 
     }
