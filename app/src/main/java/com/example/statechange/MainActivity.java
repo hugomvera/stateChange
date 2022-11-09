@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
 
+import android.widget.EditText;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG  = "StateChange";
@@ -58,12 +60,35 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         Log.i(TAG,"OnSaveInstanceState");
 
+        //gets the editText by its id
+        final EditText editText = findViewById(R.id.editText);
+
+        //get the text from the charsequence
+        CharSequence userText = editText.getText();
+
+        //key value paired
+        outState.putCharSequence("savedText",userText);
+
+
+
+
+
     }
 
     @Override
     public void onRestoreInstanceState( Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         Log.i(TAG,"OnRestoreInstanceState");
+
+        final EditText editText = findViewById(R.id.editText);
+
+        CharSequence userText = savedInstanceState.getCharSequence("savedText");
+
+        editText.setText(userText);
+
+
+
+
 
     }
 }
